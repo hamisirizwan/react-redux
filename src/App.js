@@ -7,16 +7,24 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <h1
+        <div
           style={{
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
-            color: "aqua",
+            justifyContent: "center",
           }}
         >
-          WELCOME TO REDUX TUTORIAL
-        </h1>
+          <h1
+            style={{
+              alignItems: "center",
+              color: "aqua",
+            }}
+          >
+            KARIBU DUKETU
+          </h1>
+        </div>
+        <hr style={{ marginTop: "0" }} />
+
         <Routes>
           <Route path="/" element={<Details />}></Route>
           <Route path="/des" element={<Description />}></Route>
