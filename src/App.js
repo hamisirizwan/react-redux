@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Description from "./components/Description";
+import Details from "./components/Details";
+import Error404 from "./components/Error404";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Router>
+        <h1
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            color: "aqua",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          WELCOME TO REDUX TUTORIAL
+        </h1>
+        <Routes>
+          <Route path="/" element={<Details />}></Route>
+          <Route path="/des" element={<Description />}></Route>
+          <Route path="/*" element={<Error404 />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
