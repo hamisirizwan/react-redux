@@ -51,7 +51,19 @@ function Details() {
               alt="product image"
               style={{ height: "100px" }}
             />
-            <h1>{product.title}</h1>
+            <div>
+              <h3>{product.title}</h3>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                }}
+              >
+                <h4>cost: ${product.price}</h4>
+                <button style={{ width: "60px", height: "30px" }}>buy</button>
+              </div>
+            </div>
           </div>
         ))}
       </div>
