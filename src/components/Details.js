@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setProducts } from "../redux/actions/productActions";
 import Loading from "./Loading";
+import { Link } from "react-router-dom";
 function Details() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
@@ -61,7 +62,9 @@ function Details() {
                 }}
               >
                 <h4>cost: ${product.price}</h4>
-                <button style={{ width: "60px", height: "30px" }}>buy</button>
+                <Link to={`/checkout/${product.id}`}>
+                  <button style={{ width: "60px", height: "30px" }}>buy</button>
+                </Link>
               </div>
             </div>
           </div>
